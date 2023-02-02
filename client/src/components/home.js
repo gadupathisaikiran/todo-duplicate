@@ -34,7 +34,7 @@ export default function Home(props) {
 
             
 
-         const res=await axios.post("http://localhost:5000/user/logedin",headers)
+         const res=await axios.post("https://todoappp-backend.onrender.com/user/logedin",headers)
 
 
                
@@ -56,7 +56,7 @@ useEffect(()=>{
 
    async function get(){
 
-        const res=await axios.get("http://localhost:5000/user/todo")
+        const res=await axios.get("https://todoappp-backend.onrender.com/user/todo")
 
         setalltodo(res.data.data)
     }
@@ -72,7 +72,7 @@ get()
 
 async function addtodo(){
 
-const res=await axios.post("http://localhost:5000/user/todo",Todo)
+const res=await axios.post("https://todoappp-backend.onrender.com/user/todo",Todo)
 
 setTodo(res.data)
    
