@@ -20,9 +20,17 @@ async function signup(userdata)
 
    const res=await axios.post("http://localhost:5000/user/signup",userdata)
 
-   alert("register sucess")
+  
+   if(!res.data.message){
 
-   navigate("/")
+    alert("registeration sucessful")
+    navigate("/")
+   }
+   else{
+    alert("user already exist")
+   }
+  
+
 
     console.log(res)
 
