@@ -1,0 +1,22 @@
+
+.App-header {
+  width: 1400px;
+  font-size: 22px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(151, 151, 151);
+
+  color: black;
+}
+
+table, th, td {
+  width: 70%;
+  margin-top:2%;
+  margin-left: 1%;
+  border:1px solid black;
+  background-color: white;
+  
+}
