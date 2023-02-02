@@ -31,10 +31,20 @@ async function signin(userdata)
       
         sessionStorage.setItem("token",res.data.token)
 
-        
-        alert("Signin sucess")
+             
+
+if(!res.data.message){
+
+    alert("Signin sucess")
 
         navigate("/home")
+
+
+}
+else{
+    alert("email or password is wrong")
+
+}
 
      }if(!res){
         alert("invalid password or email")
