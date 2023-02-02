@@ -81,8 +81,9 @@ setTodo(res.data)
 
 
 if(!sessionStorage.getItem("token")){
-    navigate("/user/signin")
+    navigate("/")
 }
+
 
 
 
