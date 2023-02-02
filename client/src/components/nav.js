@@ -14,7 +14,7 @@ export default function Nav(props) {
        
       
         
-        navigate("/user/signin")
+           navigate("/")
 
 
         }
