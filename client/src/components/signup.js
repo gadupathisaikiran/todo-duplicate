@@ -22,7 +22,7 @@ async function signup(userdata)
 
    alert("register sucess")
 
-   navigate("/user/signin")
+   navigate("/")
 
     console.log(res)
 
