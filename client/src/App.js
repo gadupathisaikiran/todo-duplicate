@@ -4,6 +4,7 @@ import "./App.css"
 import Home from "./components/home";
 import Signin from "./components/signin";
 import Signup from "./components/signup";
+import Verify from "./components/verify";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/user/signup" element={<Signup/>} />
           <Route path="/" element={<Signin/>} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/verify" element={<Verify/>} />
 
 
 
