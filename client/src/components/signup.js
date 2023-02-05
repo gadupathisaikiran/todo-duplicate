@@ -20,7 +20,7 @@ const [confpass,setconfpass]=useState({
 async function signup(userdata)
 {
 
-   const res=await axios.post("https://todo-backend-g8sg.onrender.com/user/signup",userdata)
+   const res=await axios.post("https://todo-backend-app-b60i.onrender.com/user/signup",userdata)
 
   
    if(!res.data.message){
