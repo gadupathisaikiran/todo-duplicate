@@ -29,7 +29,7 @@ async function signup(userdata)
 
     setconf(!conf)
         
-     alert("please verify your mail")
+     alert("registration is sucessfull!!! check... your mailbox to verify your mail")
 
     navigate("/")
    }
