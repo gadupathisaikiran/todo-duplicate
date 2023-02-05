@@ -18,10 +18,6 @@ let id;
 
 
 
-
-
-
-
 router.post("/logedin",async(req,res)=>{
 
 
