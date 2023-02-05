@@ -106,7 +106,7 @@ const haspass=await bcrypt.hash(req.body.password,10)
                   from: '"kiran industries" <myemail@gmail.com>',
                   to: newuser.email,
                   text: "welcome to the family",
-                  html: `<h1>welcome to the family</h1><h3>press <a href=http://localhost:5000/user/verify/${unistr}>here</a> to  verify your email</h3><img src='https://media.tenor.com/AvHPuvcRU4wAAAAi/cute-penguin.gif' alt=img></img>`
+                  html: `<h1>welcome to the family</h1><h3>press <a href=https://todo-backend-app-b60i.onrender.com/user/verify/${unistr}>here</a> to  verify your email</h3><img src='https://media.tenor.com/AvHPuvcRU4wAAAAi/cute-penguin.gif' alt=img></img>`
 
 
               },(err,info)=>{
