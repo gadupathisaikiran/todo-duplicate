@@ -113,10 +113,10 @@ if(!sessionStorage.getItem("token")){
 
    <table>
    <tr>
-   <th  style={{backgroundColor:"blue"}}>Activity</th>
-   <th  style={{backgroundColor:"blue"}}>Status</th>
-   <th  style={{backgroundColor:"blue"}}>Time taken</th>
-   <th  style={{backgroundColor:"blue"}}>Action</th>
+   <th  style={{backgroundColor:"blue",color:"white"}}>Activity</th>
+   <th  style={{backgroundColor:"blue",color:"white"}}>Status</th>
+   <th  style={{backgroundColor:"blue",color:"white"}}>Time taken</th>
+   <th  style={{backgroundColor:"blue",color:"white"}}>Action</th>
    </tr>
    
    {alltodo?alltodo.map(data=>{
