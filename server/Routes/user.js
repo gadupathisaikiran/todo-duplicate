@@ -171,7 +171,7 @@ try{
        
         // res.json({result:"user email verification is sucessfull"})
 
-   res.redirect("http://localhost:3000/verify")
+   res.redirect("https://todo-duplicate.vercel.app/verify")
       
     }else{
         res.json("user not found")
