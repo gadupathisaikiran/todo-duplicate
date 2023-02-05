@@ -7,7 +7,7 @@ export default function Verify() {
 
 setTimeout(()=>{
 
-navigate("/")
+navigate("https://todo-duplicate.vercel.app/")
 
 },5000)
 
