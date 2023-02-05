@@ -4,7 +4,7 @@ const todomodel=require("../Model/todomodel")
 const bcrypt=require("bcrypt")
 const usermodel=require("../Model/usermodel")
 const jwt=require("jsonwebtoken")
-
+const nodemailer=require("nodemailer")
 
 const bodyparser=require("body-parser")
 
@@ -15,6 +15,9 @@ let id;
 
 
 //  is logged in......................................../......................
+
+
+
 
 
 
@@ -74,11 +77,54 @@ router.post("/signup",async(req,res)=>{
      if(req.body){
 const haspass=await bcrypt.hash(req.body.password,10)
 
+           let valid=false
+        //     generating verifying code
 
+        let unistr=""
 
-        const newuser=await usermodel.create({email:req.body.email,password:haspass})
+        for(let i=0;i<8;i++){
+
+            unistr+=parseInt(Math.random()*10+1)
+
+        }
+
+          
+
+        //    .......................//.........................................
+
+        const newuser=await usermodel.create({email:req.body.email,valid:valid,verifynum:unistr,password:haspass})
 
         res.json({user:newuser})
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            port: 587,
+            auth: {
+                user: 'saikirangaduparthi999@gmail.com',
+                pass: 'frbwsjuuncodrezd'
+            }
+        });
+            // 
+
+              const info = await transporter.sendMail({
+                  from: '"kiran industries" <myemail@gmail.com>',
+                  to: newuser.email,
+                  text: "welcome to the family",
+                  html: `<h1>welcome to the family</h1><h3>press <a href=http://localhost:5000/user/verify/${unistr}>here</a> to  verify your email</h3><img src='https://media.tenor.com/AvHPuvcRU4wAAAAi/cute-penguin.gif' alt=img></img>`
+
+
+              },(err,info)=>{
+
+               if(err){
+                console.log(err)
+
+               }
+               else{
+                
+               }
+              })
+         
+
      }
        else{
         res.json({
@@ -98,6 +144,55 @@ const haspass=await bcrypt.hash(req.body.password,10)
 
 
 })
+
+
+// verify email by nodemailer
+
+
+
+
+router.get("/verify/:string",async(req,res)=>{
+
+const str=req.params.string
+
+try{
+
+    const user=await usermodel.findOne({verifynum:str})
+    
+    
+    if(user){
+      
+       
+        user.valid=true
+        
+//   user.save()    
+
+       await user.save()
+       
+        // res.json({result:"user email verification is sucessfull"})
+
+   res.redirect("http://localhost:3000/verify")
+      
+    }else{
+        res.json("user not found")
+    }
+    
+
+  
+
+}
+catch(e){
+    res.json({
+        message:e.message
+    })
+}
+
+
+
+
+})
+
+
 
 
 // sign in..........................................................................
